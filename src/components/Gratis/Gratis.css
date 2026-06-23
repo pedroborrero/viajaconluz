@@ -1,0 +1,133 @@
+.gratis {
+  background: linear-gradient(135deg, var(--beige-light) 0%, var(--beige-mid) 100%);
+  padding: 100px 0;
+}
+
+.gratis__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.gratis__content h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 16px;
+}
+
+.gratis__content p {
+  color: var(--ink-light);
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+
+.gratis__features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.gratis__feature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.gratis__feature-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--gold);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.gratis__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gratis__form input {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .9rem;
+  padding: 14px 20px;
+  border: 2px solid var(--beige-dark);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--ink);
+  outline: none;
+  transition: border-color .3s ease;
+  width: 100%;
+}
+
+.gratis__form input:focus {
+  border-color: var(--gold);
+}
+
+.gratis__form input::placeholder {
+  color: #aaa;
+}
+
+.gratis__form .btn {
+  width: 100%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.gratis__fine {
+  font-size: .75rem;
+  color: var(--ink-light);
+  text-align: center;
+}
+
+.gratis__success {
+  display: none;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.gratis__success.visible {
+  display: block;
+}
+
+.gratis__image {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4/5;
+}
+
+.gratis__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .gratis__inner { gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  .gratis { padding: 60px 0; }
+  .gratis__inner { grid-template-columns: 1fr; }
+  .gratis__image { display: none; }
+}
+
+@media (max-width: 480px) {
+  .gratis__form .btn { font-size: .8rem; }
+}

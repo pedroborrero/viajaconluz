@@ -1,0 +1,112 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  border-bottom-color: var(--beige-mid);
+  box-shadow: var(--shadow);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar__logo {
+  padding-top: 5px;
+  height: 90px;
+  width: auto;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar__links a {
+  font-size: .825rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color var(--transition);
+  position: relative;
+}
+
+.navbar__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+
+.navbar__links a:hover { color: var(--gold-deep); }
+.navbar__links a:hover::after { transform: scaleX(1); }
+
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.navbar__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__hamburger.open span:nth-child(2) { opacity: 0; }
+.navbar__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.navbar__mobile {
+  display: none;
+  position: fixed;
+  top: 80px; left: 0; right: 0;
+  background: var(--white);
+  padding: 24px;
+  flex-direction: column;
+  gap: 20px;
+  border-bottom: 1px solid var(--beige-mid);
+  box-shadow: var(--shadow);
+  z-index: 999;
+}
+
+.navbar__mobile.open { display: flex; }
+
+.navbar__mobile a {
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--beige-mid);
+  color: var(--ink);
+}
+
+@media (max-width: 768px) {
+  .navbar__links { display: none; }
+  .navbar__hamburger { display: flex; }
+}

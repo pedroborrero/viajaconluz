@@ -1,0 +1,147 @@
+.asesorias {
+  background: var(--white);
+  padding: 100px 0;
+}
+
+.asesorias__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.asesorias__header h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 16px;
+}
+
+.asesorias__header p {
+  color: var(--ink-light);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.asesorias__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.asesoria-card {
+  border-radius: 16px;
+  border: 2px solid var(--beige-mid);
+  padding: 40px 32px;
+  transition: border-color .3s ease, box-shadow .3s ease;
+  position: relative;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.asesoria-card:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
+}
+
+.asesoria-card--featured {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px #E8D5A3;
+  transform: scale(1.04);
+}
+
+.asesoria-card__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--white);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.asesoria-card__icon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.asesoria-card__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.asesoria-card__desc {
+  font-size: .875rem;
+  color: var(--ink-light);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+.asesoria-card__price {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  color: var(--gold-deep);
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.asesoria-card__price sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .75rem;
+  color: var(--ink-light);
+  font-weight: 400;
+}
+
+.asesoria-card__includes {
+  margin: 20px 0 28px;
+  flex: 1;
+}
+
+.asesoria-card__includes li {
+  font-size: .83rem;
+  color: var(--ink-light);
+  padding: 7px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-bottom: 1px solid var(--beige-light);
+}
+
+.asesoria-card__includes li:last-child {
+  border-bottom: none;
+}
+
+.asesoria-card__includes li::before {
+  content: '✦';
+  color: var(--gold);
+  font-size: .65rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.asesoria-card .btn {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+  .asesorias__grid { grid-template-columns: repeat(2, 1fr); }
+  .asesoria-card--featured { transform: none; }
+}
+
+@media (max-width: 768px) {
+  .asesorias { padding: 60px 0; }
+  .asesorias__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .asesoria-card { padding: 32px 24px; }
+}

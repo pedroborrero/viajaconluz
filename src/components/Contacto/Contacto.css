@@ -1,0 +1,129 @@
+.contacto {
+  background: var(--beige-light);
+  padding: 100px 0;
+}
+
+.contacto__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contacto__info h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 16px;
+}
+
+.contacto__info p {
+  color: var(--ink-light);
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+
+.contacto__details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacto__detail {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: .9rem;
+  color: var(--ink-light);
+}
+
+.contacto__detail-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--gold);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.contacto__detail a {
+  color: var(--gold-deep);
+  font-weight: 500;
+}
+
+.contacto__detail a:hover {
+  color: var(--gold);
+}
+
+.contacto__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contacto__form input,
+.contacto__form select,
+.contacto__form textarea {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .9rem;
+  padding: 14px 20px;
+  border: 2px solid var(--beige-dark);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--ink);
+  outline: none;
+  transition: border-color .3s ease;
+  width: 100%;
+}
+
+.contacto__form input:focus,
+.contacto__form select:focus,
+.contacto__form textarea:focus {
+  border-color: var(--gold);
+}
+
+.contacto__form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contacto__form .btn {
+  width: 100%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.contacto__success {
+  display: none;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.contacto__success.visible {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .contacto__inner { gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  .contacto { padding: 60px 0; }
+  .contacto__inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .contacto__form input,
+  .contacto__form select,
+  .contacto__form textarea {
+    font-size: .85rem;
+  }
+}

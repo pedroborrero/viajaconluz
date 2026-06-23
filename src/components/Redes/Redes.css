@@ -1,0 +1,139 @@
+.redes {
+  background: var(--white);
+  padding: 100px 0;
+}
+
+.redes__inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.redes__content h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 16px;
+}
+
+.redes__content p {
+  color: var(--ink-light);
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+
+.redes__links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.red-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 2px solid var(--beige-mid);
+  border-radius: 12px;
+  transition: var(--transition);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.red-link:hover {
+  border-color: var(--gold);
+  color: var(--gold-deep);
+  transform: translateX(4px);
+}
+
+.red-link__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.red-link__icon--ig {
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.red-link__icon--tt {
+  background: #000;
+}
+
+.red-link__arrow {
+  margin-left: auto;
+  color: var(--ink-light);
+}
+
+.red-link__info strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.red-link__info small {
+  font-weight: 400;
+  color: var(--ink-light);
+  font-size: .8rem;
+}
+
+.redes__feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.feed-item {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--beige-mid);
+  position: relative;
+  cursor: pointer;
+}
+
+.feed-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.feed-item:hover img {
+  transform: scale(1.08);
+}
+
+.feed-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(43,43,43,.35);
+  opacity: 0;
+  transition: opacity var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.6rem;
+}
+
+.feed-item:hover .feed-item__overlay {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .redes__inner { gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  .redes { padding: 60px 0; }
+  .redes__inner { grid-template-columns: 1fr; }
+  .redes__feed { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .redes__feed { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+}

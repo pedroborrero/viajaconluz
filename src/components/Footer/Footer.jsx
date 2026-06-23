@@ -21,7 +21,7 @@ function Footer() {
               <a href="https://www.instagram.com/viajaconluz88" target="_blank" rel="noopener noreferrer" className="footer__social">
                 <FaInstagram size={18} />
               </a>
-              <a href="https://www.tiktok.com/@viajaconluz" target="_blank" rel="noopener noreferrer" className="footer__social">
+              <a href="https://www.tiktok.com/@viajaconluz_88" target="_blank" rel="noopener noreferrer" className="footer__social">
                 <FaTiktok size={16} />
               </a>
             </div>

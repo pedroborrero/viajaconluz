@@ -53,7 +53,7 @@ function Footer() {
               <li><a href="#contacto">Escribirme</a></li>
               <li><a href="mailto:viajaconluz88@gmail.com">viajaconluz88@gmail.com</a></li>
               <li><a href="https://www.instagram.com/viajaconluz88" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-              <li><a href="https://www.tiktok.com/@viajaconluz" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+              <li><a href="https://www.tiktok.com/@viajaconluz_88" target="_blank" rel="noopener noreferrer">TikTok</a></li>
             </ul>
           </div>
 

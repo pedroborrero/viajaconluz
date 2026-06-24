@@ -43,6 +43,10 @@ function Galeria() {
               key={f.id}
               className={f.wide ? 'galeria__item galeria__item--wide' : 'galeria__item'}
               onClick={() => abrir(f.src)}
+              role="button"
+              aria-label={'Ver foto ' + (f.id)}
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && abrir(f.src)}
             >
               <img src={f.src} alt={f.alt} loading="lazy" />
               <div className="galeria__item-overlay">🔍</div>

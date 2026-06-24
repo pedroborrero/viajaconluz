@@ -32,7 +32,7 @@ function Contacto() {
             </p>
             <div className="contacto__details">
               <div className="contacto__detail">
-                <div className="contacto__detail-icon">
+                <div className="contacto__detail-icon" aria-hidden="true">
                   <FaEnvelope />
                 </div>
                 <div>
@@ -41,7 +41,7 @@ function Contacto() {
                 </div>
               </div>
               <div className="contacto__detail">
-                <div className="contacto__detail-icon">
+                <div className="contacto__detail-icon" aria-hidden="true">
                   <FaInstagram />
                 </div>
                 <div>
@@ -50,7 +50,7 @@ function Contacto() {
                 </div>
               </div>
               <div className="contacto__detail">
-                <div className="contacto__detail-icon">
+                <div className="contacto__detail-icon" aria-hidden="true">
                   <FaMapMarkerAlt />
                 </div>
                 <div>
@@ -62,31 +62,46 @@ function Contacto() {
           </div>
 
           <div className="contacto__form-wrap">
-            <form className="contacto__form" onSubmit={handleSubmit}>
+            <form className="contacto__form" onSubmit={handleSubmit} noValidate>
+              <label htmlFor="nombre" className="sr-only">Nombre completo</label>
               <input
+                id="nombre"
                 type="text"
                 name="nombre"
                 placeholder="Tu nombre completo"
                 value={form.nombre}
                 onChange={handleChange}
                 required
+                autoComplete="name"
               />
+              <label htmlFor="email" className="sr-only">Email</label>
               <input
+                id="email"
                 type="email"
                 name="email"
                 placeholder="Tu email"
                 value={form.email}
                 onChange={handleChange}
                 required
+                autoComplete="email"
               />
-              <select name="asunto" value={form.asunto} onChange={handleChange} required>
+              <label htmlFor="asunto" className="sr-only">Motivo del mensaje</label>
+              <select
+                id="asunto"
+                name="asunto"
+                value={form.asunto}
+                onChange={handleChange}
+                required
+              >
                 <option value="" disabled>Motivo del mensaje</option>
                 <option value="asesoria">Quiero contratar una asesoría</option>
                 <option value="colaboracion">Propuesta de colaboración</option>
                 <option value="guia">Información sobre guías</option>
                 <option value="otro">Otro</option>
               </select>
+              <label htmlFor="mensaje" className="sr-only">Mensaje</label>
               <textarea
+                id="mensaje"
                 name="mensaje"
                 placeholder="Cuéntame tu aventura soñada..."
                 value={form.mensaje}
@@ -97,7 +112,11 @@ function Contacto() {
                 Enviar mensaje ✈
               </button>
             </form>
-            <div className={enviado ? 'contacto__success visible' : 'contacto__success'}>
+            <div
+              className={enviado ? 'contacto__success visible' : 'contacto__success'}
+              role="alert"
+              aria-live="polite"
+            >
               ✓ Mensaje enviado! Te respondo en menos de 24h.
             </div>
           </div>

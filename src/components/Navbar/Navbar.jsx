@@ -32,7 +32,8 @@ function Navbar() {
           <button
             className={`navbar__hamburger ${menuOpen ? 'open' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menú"
+            aria-label="Menú de navegación"
+            aria-expanded={menuOpen}
           >
             <span></span><span></span><span></span>
           </button>
